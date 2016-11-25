@@ -5,7 +5,16 @@ if [ $(basename $PWD) != "scripts" ]; then
    exit 1
 fi
 
+#
+# Adding tr to fix line ending issue of windows 
+#
+for f in install*sh
+do
+tr -d '\015' <$f > $f
+done
+
 cd ..;
+
 step=$1;
 if [ "$step" = "1" ]|| [ "$step" = "all" ]
  then
