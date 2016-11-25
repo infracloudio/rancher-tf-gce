@@ -1,4 +1,10 @@
 #!/bin/bash
+
+if [ $(basename $PWD) != "scripts" ]; then
+   echo "ERROR: Run this script from scripts directory. Exiting"
+   exit 1
+fi
+
 cd ..;
 step=$1;
 if [ "$step" = "1" ]|| [ "$step" = "all" ]
