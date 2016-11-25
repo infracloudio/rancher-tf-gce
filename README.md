@@ -9,16 +9,16 @@ Scripts and terraform files to create a rancher cluster over Google Cloud
 
 ## One time setup steps
 * Clone this repo
-* Go to Google Cloud Platform Console and create a new project
-* Click "Enable and Manager Google APIs"
-* Click Enable API
-* In next screen, select "Google Compute Engine API"
+* Go to Google Cloud Platform Console and create a new project ![alt text][step1]
+* Click "Enable and Manage Google APIs" ![alt text][step2]
+* Click Enable API ![alt text][step3]
+* In next screen, select "Google Compute Engine API" ![alt text][step4]
 * Click Enable (this will take a minute or two)
-* Now click button shown below
-* Select IAM and Admin
-* Click Service Accounts on the left side pane
-* Click Create Service Account
-* Provide Name as "terraform" Role as Project owner, select "Furnish a new key" of type JSON as shown below
+* Now click button shown below ![alt text][step5]
+* Select IAM and Admin ![alt text][step6]
+* Click Service Accounts on the left side pane 
+* Click Create Service Account ![alt text][step7]
+* Provide Name as "terraform" Role as Project owner, select "Furnish a new key" of type JSON as shown below ![alt text][step8]
 * Click Create, this will download a JSON file. 
 * Copy this JSON file to credentials folder and rename it as terraform.json
 * Copy your public and private keys to the credentials folder as well.
@@ -50,3 +50,13 @@ To enable easy troubleshooting, the script can be called with step parameters al
 * `runme.sh 1` will run step _i_ mentioned above
 * `runme.sh 2` will run Steps _ii_ and _iii_ mentioned above
 * `runme.sh 5` will run step _iv_ mentioned above
+
+
+[step1]: https://github.com/harshal-shah/github-images/blob/master/rancher-tf-gce/CreateProject.jpg "Create GCP project"
+[step2]: https://github.com/harshal-shah/github-images/blob/master/rancher-tf-gce/GCE-API-Enabled.jpg "Enable API"
+[step3]: https://github.com/harshal-shah/github-images/blob/master/rancher-tf-gce/GoogleComputeEngineAPI.jpg "Search Compute Engine API"
+[step4]: https://github.com/harshal-shah/github-images/blob/master/rancher-tf-gce/GCE-API-Enabled.jpg "Enable Compute Engine API"
+[step5]: https://github.com/harshal-shah/github-images/blob/master/rancher-tf-gce/Prod-Serv.jpg "Products and Services"
+[step6]: https://github.com/harshal-shah/github-images/blob/master/rancher-tf-gce/IAM-Admin.jpg "Service Account"
+[step7]: https://github.com/harshal-shah/github-images/blob/master/rancher-tf-gce/CreateServAcc.jpg "Service Account"
+[step8]: https://github.com/harshal-shah/github-images/blob/master/rancher-tf-gce/ServiceKey.jpg "Service Key"
