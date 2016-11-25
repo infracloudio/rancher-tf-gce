@@ -54,8 +54,8 @@ To enable easy troubleshooting, the script can be called with step parameters al
 
 [step1]: https://github.com/harshal-shah/github-images/blob/master/rancher-tf-gce/CreateProject.jpg "Create GCP project"
 [step2]: https://github.com/harshal-shah/github-images/blob/master/rancher-tf-gce/GoogleManageAPI1.jpg "Enable API"
-[step3]: https://github.com/harshal-shah/github-images/blob/master/rancher-tf-gce/GoogleComputeEngineAPI.jpg "Search Compute Engine API"
-[step4]: https://github.com/harshal-shah/github-images/blob/master/rancher-tf-gce/GCE-API-Enabled.jpg "Enable Compute Engine API"
+[step4]: https://github.com/harshal-shah/github-images/blob/master/rancher-tf-gce/GoogleComputeEngineAPI.jpg "Search Compute Engine API"
+[step3]: https://github.com/harshal-shah/github-images/blob/master/rancher-tf-gce/GCE-API-Enabled.jpg "Enable Compute Engine API"
 [step5]: https://github.com/harshal-shah/github-images/blob/master/rancher-tf-gce/Prod-Serv.jpg "Products and Services"
 [step6]: https://github.com/harshal-shah/github-images/blob/master/rancher-tf-gce/IAM-Admin.jpg "Service Account"
 [step7]: https://github.com/harshal-shah/github-images/blob/master/rancher-tf-gce/CreateServAcc.jpg "Service Account"
