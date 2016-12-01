@@ -36,12 +36,12 @@ cat <<EOF> scripts/curlstuff.sh
 #
 # Command to create new environment
 #
-curl -g \
+curl \
 -X POST \
 -H 'Accept: application/json' \
 -H 'Content-Type: application/json' \
--d '{"description":"Kubernetes Test via API", "name":"k8sapitest", "allowSystemRole":false, "members":[], "swarm":false, "kubernetes":true, "mesos":false, "virtualMachine":false, "publicDns":false, "servicesPortRange":null}' \
-"http://${masterIP}:8080/v1/projects"
+-d '{"description":"rancher k8s project", "name":"rancherk8s", "projectTemplateId":"1pt1", "allowSystemRole":false, "members":[], "virtualMachine":false, "servicesPortRange":null}' \
+"http://${masterIP}:8080/v2-beta/projects"
 sleep 10;
 echo "====================  Separator ==========================";
 #
@@ -52,7 +52,7 @@ curl \
 -H 'Accept: application/json' \
 -H 'Content-Type: application/json' \
 -d '{"activeValue":null, "id":"1as!api.host", "name":"api.host", "source":null, "value":"http://${masterIP}:8080"}' \
-'http://${masterIP}:8080/v1/activesettings/1as!api.host'
+'http://${masterIP}:8080/v2-beta/activesettings/1as!api.host'
 
 echo "====================  Separator ==========================";
 sleep 20;
@@ -61,7 +61,7 @@ curl \
 -H 'Accept: application/json' \
 -H 'Content-Type: application/json' \
 -d '{"description":"new token for k8sapitest", "name":"token_k8sapitest"}' \
-'http://${masterIP}:8080/v1/projects/1a7/registrationtokens'
+"http://${masterIP}:8080/v2-beta/projects/1a7/registrationtokens"
 
 echo "====================  Separator ==========================";
 EOF
