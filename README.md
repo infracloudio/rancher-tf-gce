@@ -44,6 +44,7 @@ private_key_path = "credentials/YOUR_PRIVATE_KEY.ppk"
   2. Once master instance is created, script waits for the rancher server to boot up.
   3. API are triggered to create a rancher environment called "rancherk8s", and rancher server is activated as first host of the cluster.
   4. Remaining compute instances are created and joined to the cluster.
+  5. At the end you will get the IP of the rancher master, you can now go to http://RANCHER_MASTER_IP:8080 and work on your rancher cluster.
 
 ### Steps to destroy the cluster 
 
