@@ -57,14 +57,3 @@ variable "agent_script_dest_path" {
   default     = "/tmp/installAgent.sh"
 }
 
-variable "vm_names" {
-  description = "Hostnames for agent machines"
-  default = {
-    "0" = "k8s-master"
-    "1" = "k8s-work01"
-    "2" = "k8s-work02"
-    "3" = "k8s-work03"
-    "4" = "k8s-work04"
-    "5" = "k8s-work05"
-  }
-}

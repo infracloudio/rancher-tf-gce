@@ -4,3 +4,4 @@ credentials/harshal*
 credentials/terraform.json
 scripts/curlstuff.sh
 images/*
+.idea/*
