@@ -1,7 +1,7 @@
 resource "google_compute_instance" "rancher" {
-	count = 4
-  name = "${lookup(var.vm_names, count.index)}"
-  machine_type = "${var.machine_type}" // smallest (CPU &amp; RAM) available instance
+  count = "${var.node_count}"
+  name = "rancher-work-${count.index}"
+  machine_type = "${var.machine_type}" 
   zone         = "${var.region_zone}"
   tags         = ["k8s-node"]
   disk {
@@ -30,17 +30,6 @@ resource "google_compute_instance" "rancher" {
       agent       = false
     }
   }
- provisioner "file" {
-    source      = "${var.agent_script_src_path}"
-    destination = "${var.agent_script_dest_path}"
-
-    connection {
-      type        = "ssh"
-      user        = "root"
-      private_key = "${file("${var.private_key_path}")}"
-      agent       = false
-    }
-  }  
     provisioner "remote-exec" {
         inline = [
           "chmod +x /tmp/install.sh",

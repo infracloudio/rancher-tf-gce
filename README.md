@@ -1,11 +1,12 @@
 # rancher-tf-gce
-Scripts and terraform files to create a rancher cluster over Google Cloud
+Scripts and terraform files to create a rancher cluster over Google Cloud.
+This will create a rancher kubernetes cluster with 1 master and 3 workers.
+
 
 ## Pre-requisites
 * Google Cloud Platform Account
 * ssh keypair 
 * terminal which understands bash (Mac users can open regular command prompt), while Windows users need a bash emulator like [gitbash](https://git-scm.com/download/win) or [cygwin](https://cygwin.com/install.html) or [MobaXterm] (http://mobaxterm.mobatek.net/download.html)
-* jq installed and available in PATH variable. You can download jq for your platform [here](https://stedolan.github.io/jq/download/)
 
 
 ## One time setup steps
@@ -32,25 +33,21 @@ image = "ubuntu-os-cloud/ubuntu-1404-trusty-v20161020"
 credentials_file_path = "credentials/terraform.json"
 public_key_path = "credentials/YOUR_PUBIC_KEY_FILE.txt"
 private_key_path = "credentials/YOUR_PRIVATE_KEY.ppk"
+#
+# If you want to change number of nodes, then uncomment below line and set required value
+#node.count = 4
 ~~~
 
 ## Steps to create rancher cluster
-* cd to scripts folder and run `runme.sh all` This will do following steps:
+* Run `terraform apply` This will do following steps:
   1. Create one compute instance as master and start rancher server on it 
-  2. Once master instance is created, script waits 50 seconds for the rancher server to boot up. 
-  3. API are triggered to create a rancher environment called "k8sapitest", and rancher server is activated as first host of the cluster. 
-  4. Terraform is called again to create remaining compute instances and join them to the cluster. 
+  2. Once master instance is created, script waits for the rancher server to boot up.
+  3. API are triggered to create a rancher environment called "rancherk8s", and rancher server is activated as first host of the cluster.
+  4. Remaining compute instances are created and joined to the cluster.
 
 ### Steps to destroy the cluster 
 
-* cd to scripts folder and run `runme.sh del`. There will be a prompt from terraform for confirmation, type `yes` and all resources will be destroyed.
-
-### Troubleshooting 
-
-To enable easy troubleshooting, the script can be called with step parameters also. 
-* `runme.sh 1` will run step _i_ mentioned above
-* `runme.sh 2` will run Steps _ii_ and _iii_ mentioned above
-* `runme.sh 5` will run step _iv_ mentioned above
+* Run `terraform destroy`. There will be a prompt from terraform for confirmation, type `yes` and all resources will be destroyed.
 
 
 [step1]: https://github.com/harshal-shah/github-images/blob/master/rancher-tf-gce/CreateProject.jpg "Create GCP project"
