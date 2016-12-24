@@ -1,5 +1,5 @@
 resource "google_compute_instance" "rancher" {
-  count = 4
+  count = "${var.node_count}"
   name = "rancher-work-${count.index}"
   machine_type = "${var.machine_type}" 
   zone         = "${var.region_zone}"

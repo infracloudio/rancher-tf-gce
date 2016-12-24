@@ -56,4 +56,7 @@ variable "agent_script_dest_path" {
   description = "Path to put the install script on each destination resource"
   default     = "/tmp/installAgent.sh"
 }
-
+variable "node_count" {
+  description = "Number of nodes to be created"
+  default = "4"
+}
