@@ -33,7 +33,7 @@ resource "google_compute_instance" "rancher" {
     provisioner "remote-exec" {
         inline = [
           "chmod +x /tmp/install.sh",
-          "/tmp/install.sh ${count.index} ${google_compute_instance.rancher.0.network_interface.0.access_config.0.assigned_nat_ip}"
+          "/tmp/install.sh ${count.index} ${google_compute_instance.rancher.0.network_interface.0.access_config.0.assigned_nat_ip} ${var.rs_proj_name}"
         ]
     }
     connection {

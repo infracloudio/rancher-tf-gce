@@ -60,3 +60,8 @@ variable "node_count" {
   description = "Number of nodes to be created"
   default = "4"
 }
+
+variable "rs_proj_name" {
+  description = "Name of the rancher project"
+  default = "k8srancher"
+}

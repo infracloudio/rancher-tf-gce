@@ -36,13 +36,17 @@ private_key_path = "credentials/YOUR_PRIVATE_KEY.ppk"
 #
 # If you want to change number of nodes, then uncomment below line and set required value
 #node.count = 4
+#
+# The default project name for the rancher project is k8srancher
+# If you want to overwrite that name, uncomment below line and set required value
+#rs_proj_name = "YOUR_CHOSEN_PROJECT_NAME"
 ~~~
 
 ## Steps to create rancher cluster
 * Run `terraform apply` This will do following steps:
   1. Create one compute instance as master and start rancher server on it 
   2. Once master instance is created, script waits for the rancher server to boot up.
-  3. API are triggered to create a rancher environment called "rancherk8s", and rancher server is activated as first host of the cluster.
+  3. API are triggered to create a rancher environment called "k8srancher" (or your chosen project name if you choose to overwrite it in terraform.tfvars), and rancher server is activated as first host of the cluster.
   4. Remaining compute instances are created and joined to the cluster.
   5. At the end you will get the IP of the rancher master, you can now go to http://RANCHER_MASTER_IP:8080 and work on your rancher cluster.
 
