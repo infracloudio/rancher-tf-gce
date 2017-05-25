@@ -35,7 +35,7 @@ public_key_path = "credentials/YOUR_PUBIC_KEY_FILE.txt"
 private_key_path = "credentials/YOUR_PRIVATE_KEY.ppk"
 #
 # If you want to change number of nodes, then uncomment below line and set required value
-#node.count = 4
+#node_count = 4
 #
 # The default project name for the rancher project is k8srancher
 # If you want to overwrite that name, uncomment below line and set required value
